@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon samochodowy TwojeAuto</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <nav id="menu">
+        <div class="pasek">
+            <a href="/" class="logo-link">
+                <span class="logo-text">TwojeAuto</span>
+            </a>
+            <ul class="menu">
+            	<% if (locals.user) { %>
+            	<li><a href="/samochody">Oferta salonu</a></li>
+                <li><a href="/panel">Panel użytkownika</a></li>
+                <% if (locals.user.admin) { %>
+                <li><a href="/admin">Panel administratora</a></li>
+                <% } %>
+                <li><a class="button2" href="/logout">Wyloguj się</a></li>
+                <% } else { %>
+                <li><a href="/login">Zaloguj się</a></li>
+                <li><a href="/register">Zarejestruj się</a></li>
+                <% } %>
+            </ul>
+            <div class="menurozw" id="menurozw">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <nav class="mobile-nav" id="mobilemenu">
+        <ul class="mobile-odnosniki">
+            <% if (locals.user) { %>
+            <li><a href="/samochody">Oferta salonu</a></li>
+            <li><a href="/panel">Panel użytkownika</a></li>
+            <% if (locals.user.admin) { %>
+            <li><a href="/admin">Panel administratora</a></li>
+            <% } %>
+            <li><a class="button2" href="/logout">Wyloguj się</a></li>
+            <% } else { %>
+            <li><a href="/login">Zaloguj się</a></li>
+            <li><a href="/register">Zarejestruj się</a></li>
+            <% } %>
+        </ul>
+    </nav>
+	
+    <main>
+        <h1 class="welcmsg">Salon samochodowy TwojeAuto</h1>
+        <p class="textmsg">Witaj na stronie głównej</p>
+        <img class="mainimg" src="/images/salon.jpg"></img>
+	</main>
+
+    <footer>
+        <p>Projekt i wykonanie - (C) 2026 - Marek Moroński</p>
+    </footer>
+    <script src="/javascripts/mobile.js"></script>
+</body>
+</html>

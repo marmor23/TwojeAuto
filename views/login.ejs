@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon samochodowy TwojeAuto</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <nav id="menu">
+        <div class="pasek">
+            <a href="/" class="logo-link">
+                <span class="logo-text">TwojeAuto</span>
+            </a>
+            <ul class="menu">
+                <li><a href="/register">Zarejestruj się</a></li>
+            </ul>
+            <div class="menurozw" id="menurozw">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <nav class="mobile-nav" id="mobilemenu">
+        <ul class="mobile-odnosniki">
+            <li><a href="/register">Zarejestruj się</a></li>
+        </ul>
+    </nav>
+	
+    <main>
+        <h1 class="welcmsg">Salon samochodowy TwojeAuto</h1>
+		<form action="/login" method="post">
+			<div class="login-container">
+		    	<h1 class="logmsg">Zaloguj się</h1>
+		        <div class="input-group">
+				    <label class="loginlabel" for="username">Nazwa użytkownika</label>
+				    <input class="logininput" type="text" placeholder="Wpisz login" name="username" required>
+				</div>        
+				<div class="input-group">
+				    <label class="loginlabel" for="password">Hasło</label>
+				    <input class="logininput" type="password" placeholder="Wpisz hasło" name="password" required>
+				</div>        
+		    	<button class="loginbutton" type="submit">ZALOGUJ SIĘ</button>
+		    </div>
+		</form>
+		<% if (locals.error) { %>
+		<div style="visibility:visible;background-color:#ff0000", class="rect" id="rect"><%= error %></div>
+		<% } %>
+	</main>
+
+    <footer>
+        <p>Projekt i wykonanie - (C) 2026 - Marek Moroński</p>
+    </footer>
+    <script src="/javascripts/mobile.js"></script>
+</body>
+</html>

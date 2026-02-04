@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta salonu</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/script.js"></script>
+</head>
+<body>
+    <nav id="menu">
+        <div class="pasek">
+            <a href="/" class="logo-link">
+                <span class="logo-text">TwojeAuto</span>
+            </a>
+            <ul class="menu">
+            	<% if (locals.user) { %>
+            	<li><a href="/samochody">Oferta salonu</a></li>
+                <li><a href="/panel">Panel użytkownika</a></li>
+                <% if (locals.user.admin) { %>
+                <li><a href="/admin">Panel administratora</a></li>
+                <% } %>
+                <li><a class="button2" href="/logout">Wyloguj się</a></li>
+                <% } else { %>
+                <li><a href="/login">Zaloguj się</a></li>
+                <li><a href="/register">Zarejestruj się</a></li>
+                <% } %>
+            </ul>
+            <div class="menurozw" id="menurozw">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <nav class="mobile-nav" id="mobilemenu">
+        <ul class="mobile-odnosniki">
+            <% if (locals.user) { %>
+            <li><a href="/samochody">Oferta salonu</a></li>
+            <li><a href="/panel">Panel użytkownika</a></li>
+            <% if (locals.user.admin) { %>
+            <li><a href="/admin">Panel administratora</a></li>
+            <% } %>
+            <li><a class="button2" href="/logout">Wyloguj się</a></li>
+            <% } else { %>
+            <li><a href="/login">Zaloguj się</a></li>
+            <li><a href="/register">Zarejestruj się</a></li>
+            <% } %>
+        </ul>
+    </nav>
+	
+    <main>
+    	<p class="textdesc textbold" id="modelname"></p>
+    	<p class="textdesc" id="rocznik"></p>
+    	<p class="textdesc" id="cena"></p>
+    	<p class="textdesc" id="opis"></p>
+    	<p class="textdesc" id="carnum"></p>
+    	<img class="mainimg" id="carimg"></img><br>
+        <script>getCar(<%= cid %>)</script>
+        <center><button class="button2" onclick="buyCar(<%= cid %>)">Kup samochód</button></center>
+        <div class="rect" id="rect"></div>
+	</main>
+
+    <footer>
+        <p>Projekt i wykonanie - (C) 2026 - Marek Moroński</p>
+    </footer>
+    <script src="/javascripts/mobile.js"></script>
+</body>
+</html>

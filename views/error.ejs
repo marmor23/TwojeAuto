@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Błąd <%= errcode %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    <nav id="menu">
+        <div class="pasek">
+            <a href="/" class="logo-link">
+                <span class="logo-text">TwojeAuto</span>
+            </a>
+        </div>
+    </nav>
+	
+    <main>
+    	<h1><center>Błąd <%= errcode %></center></h1>
+		<div style="visibility:visible;background-color:#ff0000", class="rect" id="rect"><%= error %></div>
+		<a href="/"><center>Powrót do strony głównej</center></a>
+	</main>
+
+    <footer>
+        <p>Projekt i wykonanie - (C) 2026 - Marek Moroński</p>
+    </footer>
+</body>
+</html>

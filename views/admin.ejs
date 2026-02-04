@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel administratora</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/script.js"></script>
+</head>
+<body>
+    <nav id="menu">
+        <div class="pasek">
+            <a href="/" class="logo-link">
+                <span class="logo-text">TwojeAuto</span>
+            </a>
+            <ul class="menu">
+            	<li><a href="/samochody">Oferta salonu</a></li>
+                <li><a href="/panel">Panel użytkownika</a></li>
+                <li><a href="/admin">Panel administratora</a></li>
+                <li><a class="button2" href="/logout">Wyloguj się</a></li>
+            </ul>
+            <div class="menurozw" id="menurozw">
+		        <span></span>
+		        <span></span>
+		        <span></span>
+            </div>
+        </div>
+    </nav>
+    
+    <nav class="mobile-nav" id="mobilemenu">
+        <ul class="mobile-odnosniki">
+            <li><a href="/samochody">Oferta salonu</a></li>
+            <li><a href="/panel">Panel użytkownika</a></li>
+            <li><a href="/admin">Panel administratora</a></li>
+            <li><a class="button2" href="/logout">Wyloguj się</a></li>
+        </ul>
+    </nav>
+	
+    <main>
+		<h1 class="welcmsg">Panel administratora</h1>
+		<div class="textdesc textsep" id="msg">Zmień cenę samochodu</div>
+    	<table class="tabela" id="tabela">
+    		<thead>
+				<tr>
+					<th><h1>Firma i model</h1></th>
+					<th><h1>Cena</h1></th>
+				</tr>
+			</thead>
+			<tbody id="tablecontent"></tbody>
+		</table>
+		<div class="rect" id="rect"></div>
+		<div class="textdesc textsep" id="msg2"></div>
+		<table style="visibility:hidden" class="tabela" id="tabela2">
+    		<thead>
+				<tr>
+					<th><h1>Użytkownik</h1></th>
+					<th><h1>Model</h1></th>
+					<th><h1>Cena</h1></th>
+					<th><h1>Akcja</h1></th>
+					<th><h1>Data</h1></th>
+				</tr>
+			</thead>
+			<tbody id="tablecontent2"></tbody>
+		</table>
+        <script>
+        getadminCars();
+        setchange();
+        getlogs();
+        </script>
+	</main>
+
+    <footer>
+        <p>Projekt i wykonanie - (C) 2026 - Marek Moroński</p>
+    </footer>
+    <script src="/javascripts/mobile.js"></script>
+</body>
+</html>
